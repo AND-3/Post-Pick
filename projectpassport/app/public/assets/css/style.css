@@ -1,0 +1,59 @@
+#signinPage
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
+#signinBoard {
+	margin-top: 70px;
+}
+
+#loginArea {
+	margin-top: 40px;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+.login-header {
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.login-switch {
+    float: right;
+    margin-top: 5px;
+    line-height: normal;
+}
+
+input {
+	margin-top: 20px;
+}
+
+.btn-primary {
+	background-color: #07a940;
+	border-color: #07a940;
+}
+
+.btn-primary:hover {
+	background-color: #21c85c;
+	border-color: #21c85c;
+}
+
+a {
+	color: #07a940;
+}
+
+a:hover {
+	color: #21c85c;
+}
+
+
+
+
