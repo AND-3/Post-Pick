@@ -2,18 +2,73 @@
 <html>
  
 <head>
-    <title></title>
+    <title>Post 'n Pick</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Link to the Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Links to an dditional CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!--viewport tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
  
 <body>
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
-    </form>
- 
+
+	<nav class="navbar navbar-default">
+	    <div class="container">
+
+	      <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	        <a class="navbar-brand" id="signinPage">POST 'N PICK</a>
+	        </div>	        
+	      </div><!-- /.container-fluid -->
+	    </div><!-- /.container -->
+	</nav>
+
+	<div class="container">
+		<div class="row" id="signinBoard">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="row">
+
+					<div class="col-md-6">
+						<img src="assets/img/signin.png" alt="signin pic" height="300">
+					</div>
+					
+					<div class="col-md-6" id="loginArea">
+						<div class="clearfix"><div class="login-header">Sign in</div>
+						<div class="login-switch">or <a href="/signup" class="login-switch-link">create an account</a></div></div>
+						
+						<!--<% if (signinMessage) { %>
+        					<div class="alert alert-danger"><%= message %></div>
+    					<% } %>-->
+
+    					<!--<input type="hidden" value="<%= JSON.stringify(signinMessage) %>">-->
+
+						<div class="form-group">
+				            <form id="signin" name="signin" method="post" action="signin">
+						        <input class="form-control" name="email" type="text" placeholder="Email" />
+						        <input class="form-control" name="password" type="password" placeholder="Password"/>
+						        <input class="btn btn-primary" type="submit" value="Sign In" />
+				    		</form>
+				    	</div>
+					</div>
+
+				</div><!--login row-->
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+	</div><!--container div-->
+
+	<!-- Link in jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
 </body>
  
 </html>
