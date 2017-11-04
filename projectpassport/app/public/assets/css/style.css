@@ -19,6 +19,14 @@
     display: block;
 }
 
+.user-logout-icon {
+    margin-top: -1px;
+    margin-right: 4px;
+}
+
+.logout-text {
+    margin-top: -2px;
+}
 
 .login-header {
     float: left;

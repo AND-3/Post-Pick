@@ -36,9 +36,8 @@
 	          <ul class="nav navbar-nav">
 	          </ul>
 	        <ul class="nav navbar-nav navbar-right">
-	          <li><a href="">Post Stats</a></li>
-	          <li><a href="/pick">Pick Stats</a></li>
-	          <li class="logout-text"><a href="/pick"><img src="assets/img/user-icon.png" class="user-logout-icon" alt="signin pic" height="25">Logout</a></li>
+	          <li><a href="dashboard.handlebars">Post Stats</a></li>
+	          <li><a href="">Pick Stats</a></li>
 	        </ul>
 	        </div><!-- /.navbar-collapse -->
 	      </div><!-- /.container-fluid -->
@@ -47,8 +46,8 @@
 
 	<div class="container">
 
-	    <h2>Dashboard</h2>
-	    <h5>Post stats!<h5>
+	    <h2>Pick Your Stats</h2>
+	    <h5>Choose which field you would like to search by.</h5>
 
 	    <div class="form-group">
 			<form id="playerPost" name="playerPost" method="post" action="playerPost">
@@ -56,8 +55,12 @@
 				<input class="form-control" name="playerTeam" type="text" placeholder="Player Team"/>
 				<input class="form-control" name="playerPosition" type="text" placeholder="Player Position"/>
 				<input class="form-control" name="playerFanPoints" type="text" placeholder="Player Fan Points"/>
-				<input class="btn btn-primary" type="submit" value="Submit" />
+				<input class="btn btn-primary" type="submit" value="Search" />
 			</form>
+		</div>
+		
+		<h4>Search Results</h4>
+		<div class="search-results">
 		</div>
 
 	</div><!--container div-->
