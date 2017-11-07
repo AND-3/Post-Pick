@@ -1,3 +1,39 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
+}
+
+#pages-bg {
+    background-color: #2a2a2a;
+    background-image: url("../img/bg1.png");
+    background-size: 672px 407px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#signin-bg {
+    background-color: #fff;
+}
+
+#navbar-default-signin {
+    background-color: #2A2A2A;
+    border-color: #eee;
+    height: 95px;
+}
+
+.nav-logo-signin {
+    position: absolute;
+    left: 50%;
+    margin-left: -208px !important;
+    display: block;
+    margin-top: -15px;
+}
+
 #signinPage
 {
     position: absolute;
@@ -6,6 +42,49 @@
     text-align: center;
     margin:0 auto;
 }
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+    height: 95px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    margin-top: 45px;
+    color: #2a2a2a;
+}
+
+.nav-logo {
+    margin-top: -15px;
+}
+
+#main-div {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.label {
+    display: none;
+}
+
+#main-div h2, h4 {
+    color: #fff;
+}
+
+#title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main-div {
+    margin-bottom: 80px;
+}
+
+h4 {
+    letter-spacing: 1px;
+}
+
 
 #signinBoard {
 	margin-top: 70px;
@@ -24,10 +103,6 @@
     margin-right: 4px;
 }
 
-.logout-text {
-    margin-top: -2px;
-}
-
 .login-header {
     float: left;
     font-size: 18px;
@@ -39,29 +114,138 @@
     margin-top: 5px;
     line-height: normal;
 }
+.button1 {
+    float: left;
+    margin-top: 5px;
+}   
+
+.button2 {
+    float: right;
+    margin-top: 5px;
+}
+
+#dashboard-buttons {
+    margin-top: 45px;
+}
 
 input {
 	margin-top: 20px;
 }
 
 .btn-primary {
-	background-color: #07a940;
-	border-color: #07a940;
+	background-color: #fca72a;
+	border-color: #fca72a;
 }
 
 .btn-primary:hover {
-	background-color: #21c85c;
-	border-color: #21c85c;
+	background-color: #ffb448;
+	border-color: #ffb448;
 }
 
 a {
-	color: #07a940;
+	color: #fca72a;
 }
 
 a:hover {
-	color: #21c85c;
+	color: #ffb750;
 }
 
+.footer {
+     position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+    line-height: 60px;
+    background-color: #242424;
+    color: #eee;
+    margin-top: 100px;
+
+}
+
+#sign-footer {
+    background-color: #eee;
+    color: #777;
+}
+
+#user-data {
+    margin-top: 30px;
+    color: #fff;
+}
+
+@media screen and (max-width:767px){
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #e7e7e7;
+        background-color: #fff;
+    }
+
+    .container-fluid>.navbar-collapse, .navbar-default .navbar-nav>li>a {
+        width: 250px;
+        float: right;
+        text-align: right;
+        margin-top: 5px;
+    }
+
+    .container-fluid>.navbar-collapse {
+        margin-top: -5px;
+    }
+
+/*    .navbar-toggle {
+        background-image: url("../img/user-icon.png");
+        background-size: 200px 200px;
+        background-repeat: no-repeat;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+*/
+}
+
+@media screen and (max-width:501px){
+    .nav-logo {
+        width: 300px;
+        height: 103px;
+    }
+    .navbar-default {
+        height: 75px;
+    }
+}
+
+@media screen and (max-width:438px){
+    .nav-logo {
+        margin-top: -36px;
+    }
+    .navbar-default {
+        height: 105px;
+    }
+
+    .container-fluid>.navbar-collapse {
+    margin-top: -50px;
+}
+}
+
+@media screen and (max-width:450px){
+    .footer {
+        height: 70px;
+        padding-top: 20px;
+        line-height: 20px;
+    }
+    .button1 {
+        float: none;
+    }   
+
+    .button2 {
+        float: none;
+        margin-top: 25px;
+    }
+
+}
+
+@media screen and (max-width:352px){
+    .nav-logo {
+        width: 250px;
+        height: 86px;
+        margin-top: -23px;
+    }
+}
 
 
 
