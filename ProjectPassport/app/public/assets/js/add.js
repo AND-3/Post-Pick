@@ -34,9 +34,21 @@ $("#add-btn").on("click", function(event) {
     // On success, run the following code
     .done(function(data) {
       console.log("Help");
+      showSuccessfullyAdded();
     });
+
   //*******************************************************************/
   // Empty all textboxes with an empty string and set boolean to false /
   //*******************************************************************/
+  showSuccessfullyAdded();
   document.getElementById('addForm').reset();
+});
+
+function showSuccessfullyAdded() {
+  $("#modal-success").append("<h3>Player Successfully Added! </h3>");
+  $("#myModal").modal();
+}
+
+$("#close").click(function() {
+  $("#modal-success").html("");
 });

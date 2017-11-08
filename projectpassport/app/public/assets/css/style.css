@@ -61,6 +61,34 @@ body {
 #main-div {
     margin-top: 100px;
     text-align: center;
+    margin-bottom: 80px;
+}
+
+#more-news {
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+#more-news a {
+    color: #333 !important;
+}
+
+.moreNewsTitleStyle {
+    margin-bottom: 40px;
+
+}
+
+.moreNewsTitleStyle p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.newsImage {
+    width: 230px;
+    float: left;
+    margin-right: 15px;
 }
 
 .label {
@@ -77,21 +105,41 @@ body {
     margin-bottom: 20px;
 }
 
-#main-div {
-    margin-bottom: 80px;
-}
-
 h4 {
     letter-spacing: 1px;
 }
 
+#main-div2 h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+#main-div2 {
+    margin-top: 70px;
+}
+
+#lnameOpp-search, #fanptsOpp-search {
+    margin-bottom: 10px;
+}
+
+.panel-heading {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
 #signinBoard {
-	margin-top: 70px;
+    margin-top: 70px;
+}
+
+select {
+    height: 30px;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 #loginArea {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 
 .clearfix {
@@ -129,25 +177,57 @@ h4 {
 }
 
 input {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .btn-primary {
-	background-color: #fca72a;
-	border-color: #fca72a;
+    background-color: #fca72a;
+    border-color: #fca72a;
 }
 
 .btn-primary:hover {
-	background-color: #ffb448;
-	border-color: #ffb448;
+    background-color: #ffb448;
+    border-color: #ffb448;
+}
+
+.panel-transparent {
+  background: none;
+}
+
+.panel-transparent .panel-body {
+  background: rgba(255, 255, 255, 0.7)!important;
+  color: rgba(0,0,0,1.0);
+}
+
+.panel {
+    border: 0;
+}
+
+#lastRow {
+    margin-top: 20px;
+}
+.table > thead > tr > th, .table > thead > tr > td {
+    border: 0;
+}
+
+#leftLabels {
+    float: left;
+    margin-bottom: 6px;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.checkbox label {
+    font-weight: 700;
 }
 
 a {
-	color: #fca72a;
+    color: #fca72a;
 }
 
 a:hover {
-	color: #ffb750;
+    color: #ffb750;
 }
 
 .footer {
@@ -197,6 +277,16 @@ a:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
 */
+}
+
+@media (min-width: 768px) {
+
+    .form-inline .checkbox input[type=checkbox], .form-inline .radio input[type=radio] {
+        position: relative;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
 }
 
 @media screen and (max-width:501px){
