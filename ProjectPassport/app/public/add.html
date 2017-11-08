@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Express Library</title>
+
+		<!-- Bootstrap CSS & JS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="jumbotron">
+				<h1>[What do you want to put here?]</h1>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><strong>Add Fantasy Record</strong></h3>
+						</div>
+						<div class="panel-body">
+							<form action="" method="POST" role="form" id="addForm">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label for="">LastName:</label>
+											<input type="text" class="form-control" id="lname" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">Position:</label>
+											<input type="text" class="form-control" id="position" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">GameDate:</label>
+											<input type="date" class="form-control" id="gamedate" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">FanPoints:</label>
+											<input type="number" class="form-control" id="fanpoints" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">MinsPlayed:</label>
+											<input type="number" class="form-control" id="minsplayed" placeholder="">
+										</div>
+									</div>
+
+									<div class="col-lg-4">
+										<div class="form-group">				
+											<label for="">WonGame:</label>
+											<input type="checkbox" class="form-control" id="wongame" placeholder=""> 
+										</div>
+										<div class="form-group">
+											<label for="">Injured:</label>
+											<input type="checkbox" class="form-control" id="injured" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">TeamActPts:</label>
+											<input type="number" class="form-control" id="teamactpoints" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">OppActPts:</label>
+											<input type="number" class="form-control" id="oppactpts" placeholder="">
+										</div>
+									</div>
+
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label for="">Team:</label>
+											<!--<input type="text" class="form-control" id="team" placeholder="">-->
+											<select id="team">
+												<option value="ATL">ATL - Atlanta Hawks</option>
+												<option value="BKN">BKN - Brooklyn Nets</option>
+												<option value="BOS">BOS - Boston Celtics</option>
+												<option value="CHA">CHA - Charlotte Hornets</option>
+												<option value="CHI">CHI - Chicago Bulls</option>
+												<option value="CLE">CLE - Cleveland Cavaliers</option>
+												<option value="DAL">DAL - Dallas Mavericks</option>
+												<option value="DEN">DEN - Denver Nuggets</option>
+												<option value="DET">DET - Detroit Pistons</option>
+												<option value="GSW">GSW - Golden State Warriors</option>
+												<option value="HOU">HOU - Houston Rockets</option>
+												<option value="IND">IND - Indiana Pacers</option>
+												<option value="LAC">LAC - LosAngeles Clippers</option>
+												<option value="LAL">LAL - LosAngles Lakers</option>
+												<option value="MEM">MEM - Memphis Grizzlies</option>
+												<option value="MIA">MIA - Miami Heat</option>
+												<option value="MIL">MIL - Milwaukee Bucks</option>
+												<option value="MIN">MIN - Minnesota Timberwolves</option>
+												<option value="NOP">NOP - NewOrleans Pelicans</option>
+												<option value="NYK">NYK - NewYork Knicks</option>
+												<option value="OKC">OKC - OklahomaCity Thunder</option>
+												<option value="ORL">ORL - Orlando Magic</option>
+												<option value="PHI">PHI - Philedelphia 76ers</option>
+												<option value="PHX">PHX - Phoenix Suns</option>
+												<option value="POR">POR - Portland Trailblazers</option>
+												<option value="SAC">SAC - Sacramento Kings</option>
+												<option value="SAS">SAS - SanAntonio Spurs</option>
+												<option value="TOR">TOR - Toronto Raptors</option>
+												<option value="UTA">UTA - Utah Jazz</option>
+												<option value="WAS">WAS - Washington Wizards</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="">Opponent:</label>
+											<!--<input type="text" class="form-control" id="opponent" placeholder="">-->
+											<select id="opponent">
+												<option value="ATL">ATL - Atlanta Hawks</option>
+												<option value="BKN">BKN - Brooklyn Nets</option>
+												<option value="BOS">BOS - Boston Celtics</option>
+												<option value="CHA">CHA - Charlotte Hornets</option>
+												<option value="CHI">CHI - Chicago Bulls</option>
+												<option value="CLE">CLE - Cleveland Cavaliers</option>
+												<option value="DAL">DAL - Dallas Mavericks</option>
+												<option value="DEN">DEN - Denver Nuggets</option>
+												<option value="DET">DET - Detroit Pistons</option>
+												<option value="GSW">GSW - Golden State Warriors</option>
+												<option value="HOU">HOU - Houston Rockets</option>
+												<option value="IND">IND - Indiana Pacers</option>
+												<option value="LAC">LAC - LosAngeles Clippers</option>
+												<option value="LAL">LAL - LosAngles Lakers</option>
+												<option value="MEM">MEM - Memphis Grizzlies</option>
+												<option value="MIA">MIA - Miami Heat</option>
+												<option value="MIL">MIL - Milwaukee Bucks</option>
+												<option value="MIN">MIN - Minnesota Timberwolves</option>
+												<option value="NOP">NOP - NewOrleans Pelicans</option>
+												<option value="NYK">NYK - NewYork Knicks</option>
+												<option value="OKC">OKC - OklahomaCity Thunder</option>
+												<option value="ORL">ORL - Orlando Magic</option>
+												<option value="PHI">PHI - Philedelphia 76ers</option>
+												<option value="PHX">PHX - Phoenix Suns</option>
+												<option value="POR">POR - Portland Trailblazers</option>
+												<option value="SAC">SAC - Sacramento Kings</option>
+												<option value="SAS">SAS - SanAntonio Spurs</option>
+												<option value="TOR">TOR - Toronto Raptors</option>
+												<option value="UTA">UTA - Utah Jazz</option>
+												<option value="WAS">WAS - Washington Wizards</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="">Notes:</label>
+											<input type="text" class="form-control" id="notes" placeholder="">
+										</div>
+										<div class="form-group">
+											<label for="">EntryId:</label>
+											<input type="number" class="form-control" id="entryid" placeholder="">
+										</div>
+									</div>
+								</div>
+							</form>
+							<br>
+							<div class="text-right">
+								<button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-plus"></span> Add</button>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="/assets/js/add.js" type="text/javascript"></script>
+
+	</body>
+</html>

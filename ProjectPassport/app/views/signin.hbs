@@ -52,9 +52,9 @@
 
 						<div class="form-group">
 				            <form id="signin" name="signin" method="post" action="signin">
-						        <input class="form-control" name="email" type="text" placeholder="Email" />
-						        <input class="form-control" name="password" type="password" placeholder="Password"/>
-						        <input class="btn btn-primary" type="submit" value="Sign In" />
+						        <input class="form-control" id="Email" name="email" type="text" placeholder="Email" />
+						        <input class="form-control" id="password" name="password" type="password" placeholder="Password"/>
+						        <input class="btn btn-primary" id="submitBtn" type="submit" value="Sign In" />
 				    		</form>
 				    	</div>
 					</div>
@@ -75,6 +75,20 @@
 	<!-- Link in jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
+
+		$("#submitBtn").on("click", function(event) {
+sessionStorage.setItem('Email', $("#Email").val());
+			//event.preventDefault();
+		  	/*$.ajax({
+		  		url: "signin"
+		  		method: "Post"
+		  		data: {
+		  			email: $("#Email").val(),
+		  			password: $("#password").val()
+		  		}
+		  	});*/
+  		});
+
 		 // This is our API key. Add your own API key between the ""
 	    var APIKey = "924886c08f2548fc8c07fb2c9568acaf";
 

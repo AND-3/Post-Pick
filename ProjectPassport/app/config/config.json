@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "1Jochanga",
-    "database": "sequelize_passport",
+    "password": "790@Camaro",
+    "database": "basketball_db",
     "host": "localhost",
     "dialect": "mysql"
   },
