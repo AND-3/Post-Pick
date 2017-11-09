@@ -31,10 +31,12 @@ module.exports = function(app) {
       });
     }
   });
+
   //*********************/
   // Get records by team /
   //*********************/
   app.get("/api/team/:team/:email", function(req, res) {
+      console.log("team: " + req.params.team + "    " + req.params.email)
     if (req.params.team) {
      db.FanRecord.findAll({
         where: {
@@ -47,9 +49,9 @@ module.exports = function(app) {
       });
     }
   });
-  //*************************/
-  // Get records by position /
-  //*************************/
+  //***********************************/
+  // Get records by position and email /
+  //***********************************/
   app.get("/api/position/:position/:email", function(req, res) {
     if (req.params.position) {
       db.FanRecord.findAll({
@@ -67,16 +69,17 @@ module.exports = function(app) {
   // Get records by fanpoints /
   //**************************/
   app.get("/api/fanptsop/:fanpts/:op/:email", function(req, res) {
+    console.log("Help")
     if (req.params.op == "greaterthan") {
+      console.log("Help2")
       if (req.params.fanpts) {
+        console.log("Help3")
         db.FanRecord.findAll({
           where: {
-            fanpoints: {
-              $gte: req.params.fanpts,
+            fanpoints: {$gte: req.params.fanpts},
               userid: req.params.email
-            }
           },
-        order: [['lname', 'ASC'],['fanpoints','ASC']]
+          order: [['lname', 'ASC'],['fanpoints','ASC']]
         }).then(function(results) {
           res.json(results);
         });
@@ -85,20 +88,19 @@ module.exports = function(app) {
       if (req.params.fanpts) {
         db.FanRecord.findAll({
           where: {
-            fanpoints: {
-              $lte: req.params.fanpts,
+            fanpoints: {$lte: req.params.fanpts},
               userid: req.params.email
-            }
-          }
+          },
+          order: [['lname', 'ASC'],['fanpoints','ASC']]
         }).then(function(results) {
           res.json(results);
         });
       }
     }
   });
-//**************************************/
-// Get records by last name and opponent/
-//**************************************/
+//************************************************/
+// Get records by last name and opponent and email/
+//************************************************/
   app.get("/api/lnameOpp/:lname/:opponent/:email", function(req, res) {
     if (req.params.lname) {
       db.FanRecord.findAll({
@@ -113,9 +115,9 @@ module.exports = function(app) {
       });
     }
   });
-  //**********************************/
-  // Get records by team and opponent /
-  //**********************************/
+  //********************************************/
+  // Get records by team and opponent and email /
+  //********************************************/
   app.get("/api/teamOpp/:team/:opponent/:email", function(req, res) {
     if (req.params.team) {
       db.FanRecord.findAll({
@@ -130,9 +132,9 @@ module.exports = function(app) {
       });
     }
   });
-  //**************************************/
-  // Get records by position and opponent /
-  //**************************************/
+  //************************************************/
+  // Get records by position and opponent and email /
+  //************************************************/
   app.get("/api/positionOpp/:position/:opponent/:email", function(req, res) {
     if (req.params.position) {
       db.FanRecord.findAll({
@@ -147,9 +149,9 @@ module.exports = function(app) {
       });
     }
   });
-  //***************************************/
-  // Get records by fanpoints and opponent /
-  //***************************************/
+  //*************************************************/
+  // Get records by fanpoints and opponent and email /
+  //*************************************************/
   app.get("/api/fanptsOpp/:fanpts/:opponent/:op/:email", function(req, res) {
       if (req.params.op == "greaterthan") {
         if (req.params.fanpts) {

@@ -59,7 +59,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		        <a class="navbar-brand" href="/dashboard"><img src="assets/img/pplogo.png" class="nav-logo" alt="logo" height="130"></a>
+		        <img src="assets/img/pplogo.png" class="nav-logo" alt="logo" height="130">
 		        </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -95,8 +95,14 @@
 											<input type="text" class="form-control" id="lname" placeholder="Last Name">
 										</div>
 										<div class="form-group">
-											
-											<input type="text" class="form-control" id="position" placeholder="Position">
+											<label for="">Position  </label>
+											<select id="position">
+												<option value="PG">PG - Point Guard</option>
+												<option value="SG">SG - Shooting Guard</option>
+												<option value="SF">SF - Small Forward</option>
+												<option value="PG">PF - Power Forward</option>
+												<option value="C">C - Center</option>
+											</select>
 										</div>
 										<div class="form-group">
 											<label for="" id="leftLabels">Game Date</label>

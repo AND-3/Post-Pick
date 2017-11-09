@@ -13,16 +13,11 @@ $("#lname-search-btn").on("click", function(event) {
   // Save the lastName they typed into the text input /
   //**************************************************/
   var lastNameS = $("#lname-search").val().trim();
-  console.log("lastname: " + lastNameS)
   var email = sessionStorage.Email;
-  console.log("sessionStorage: " + email);
   //***************************************************/
   // Make an AJAX get request passing lname in the url /
   //***************************************************/
-  //$.get("/api/lname/" + lastNameS + "/" + sessionStorage.Email, function(data) {
-  //$.get("/api/lname/" + lastNameS, function(data) {
-  $.get("/api/lname/" + lastNameS + "/" + sessionStorage.Email, function(data) {
-     console.log("data: " + data);
+  $.get("/api/lname/" + lastNameS + "/" + email, function(data) {
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -42,9 +37,7 @@ $("#team-search-btn").on("click", function(event) {
   //**************************************************/
   // Make an AJAX get request passing team in the url /
   //**************************************************/
-  console.log("teamS: " + teamS)
   $.get("/api/team/" + teamS + "/" + sessionStorage.Email , function(data) {
-    console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -66,7 +59,6 @@ $("#position-search-btn").on("click", function(event) {
   // Make an AJAX get request passing position in the url /
   //******************************************************/
   $.get("/api/position/" + positionS + "/" + sessionStorage.Email, function(data) {
-    console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -93,9 +85,9 @@ $("#fanpts-search-btn").on("click", function(event) {
     } else {
       op = "lessthan";
     }
-  //****************************************************/
-  // Make an AJAX get request passing fanpts in the url /
-  //****************************************************/
+  //**************************************************************/
+  // Make an AJAX get request passing fanpts and email in the url /
+  //**************************************************************/
   $.get("/api/fanptsop/" + fanptsS + "/" + op + "/" + sessionStorage.Email, function(data) {
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
@@ -115,11 +107,10 @@ $("#lnameOpp-search-btn").on("click", function(event) {
   //************************************************************/
   var lname = $("#lnameOpp-search").val().trim();
   var opponent = $("#lnameOpp2-search option:selected" ).val();  
-  //****************************************************************/
-  // Make an AJAX get request passing lname and opponent in the url /
-  //****************************************************************/
-  console.log("lname: " + lname + "Opponent: " + opponent)
-  $.get("/api/lnameOpp/" + lname + "/" + opponent, function(data) {
+  //**************************************************************************/
+  // Make an AJAX get request passing lname and opponent and email in the url /
+  //**************************************************************************/
+  $.get("/api/lnameOpp/" + lname + "/" + opponent + "/" + sessionStorage.Email, function(data) {
     console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
@@ -139,11 +130,10 @@ $("#teamOpp-search-btn").on("click", function(event) {
   //***********************************************************/
   var team = $("#teamOpp-search").val().trim();
   var opponent = $("#teamOpp2-search option:selected" ).val();  
-  //***************************************************************/
-  // Make an AJAX get request passing team and opponent in the url /
-  //***************************************************************/
+  //*************************************************************************/
+  // Make an AJAX get request passing team and opponent and email in the url /
+  //*************************************************************************/
   $.get("/api/teamOpp/" + team + "/" + opponent + "/" + sessionStorage.Email, function(data) {
-    console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -162,11 +152,10 @@ $("#positionOpp-search-btn").on("click", function(event) {
   //***********************************************************/
   var position = $("#positionOpp-search option:selected" ).val(); 
   var opponent = $("#positionOpp2-search option:selected" ).val(); 
-  //*******************************************************************/
-  // Make an AJAX get request passing position and opponent in the url /
-  //*******************************************************************/
+  //*****************************************************************************/
+  // Make an AJAX get request passing position and opponent and email in the url /
+  //*****************************************************************************/
   $.get("/api/positionOpp/" + position + "/" + opponent + "/" + sessionStorage.Email, function(data) {
-    console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -194,12 +183,10 @@ $("#fanptsOpp-search-btn").on("click", function(event) {
     } else {
       op = "lessthan";
     }
-  console.log(fanpts + "   " + opponent + "     " + op)
-  //*****************************************************************/
-  // Make an AJAX get request passing fanpts and opponent in the url /
-  //*****************************************************************/
+  //***************************************************************************/
+  // Make an AJAX get request passing fanpts and opponent and email in the url /
+  //***************************************************************************/
   $.get("/api/fanptsOpp/" + fanpts + "/" + opponent + "/" + op + "/" + sessionStorage.Email, function(data) {
-    console.log(data);
     //***********************************************************/
     // Call our showFanRecord function to add record to the page /
     //***********************************************************/
@@ -234,18 +221,18 @@ function showFanRecord(data) {
       if (ctr > 0) {
         $("#modal-data").append("<h2>" + seperator + "</h2>");
       }
-      $("#modal-data").append("<p>Last Name: " + data[i].lname + "</p>");
-      $("#modal-data").append("<p>Position: " + data[i].position + "</p>");
-      $("#modal-data").append("<p>Game Date: " + data[i].gamedate + "</p>");
-      $("#modal-data").append("<p>Minutes Played: " + data[i].minsplayed + "</p>");
-      $("#modal-data").append("<p>Fantasy Points: " + data[i].fanpoints + "</p>");
-      $("#modal-data").append("<p>Won Game: " + data[i].wongame + "</p>");
-      $("#modal-data").append("<p>Injured: " + data[i].injured + "</p>");
-      $("#modal-data").append("<p>Team Actual Points: " + data[i].teamactpts + "</p>");
-      $("#modal-data").append("<p>Opponent Actual Points: " + data[i].oppactpts + "</p>");
-      $("#modal-data").append("<p>Opponent: " + data[i].opponent + "</p>");
-      $("#modal-data").append("<p>Notes: " + notes + "</p>");
-      $("#modal-data").append("<p>Entry ID: " + data[i].entryid + "</p>");
+      $("#modal-data").append("<p><b>Last Name:</b> " + data[i].lname + "</p>");
+      $("#modal-data").append("<p><b>Position:</b> " + data[i].position + "</p>");
+      $("#modal-data").append("<p><b>Game Date:</b> " + data[i].gamedate + "</p>");
+      $("#modal-data").append("<p><b>Minutes Played:</b> " + data[i].minsplayed + "</p>");
+      $("#modal-data").append("<p><b>Fantasy Points:</b> " + data[i].fanpoints + "</p>");
+      $("#modal-data").append("<p><b>Won Game:</b> " + data[i].wongame + "</p>");
+      $("#modal-data").append("<p><b>Injured:</b> " + data[i].injured + "</p>");
+      $("#modal-data").append("<p><b>Team Actual Points:</b> " + data[i].teamactpts + "</p>");
+      $("#modal-data").append("<p><b>Opponent Actual Points:</b> " + data[i].oppactpts + "</p>");
+      $("#modal-data").append("<p><b>Opponent:</b> " + data[i].opponent + "</p>");
+      $("#modal-data").append("<p><b>Notes:</b> " + notes + "</p>");
+      $("#modal-data").append("<p><b>Entry ID:</b> " + data[i].entryid + "</p>");
       $("#myModal").modal();
       ctr++;
     }
